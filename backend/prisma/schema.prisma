@@ -12,3 +12,51 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model user {
+  id String @id @default(uuid())
+  username String
+  email String @unique
+  password String
+}
+model driver {
+  id String @id @default(uuid())
+  name  String
+  email String @unique
+  password String 
+  bus bus?
+}
+
+model admin {
+  id String @id @default(uuid())
+  email String
+  password String
+}
+
+model bus {
+  id String @id @default(uuid())
+  busno String
+  driverId String @unique
+  routeId String
+  live Boolean @default(false)
+  routes routes @relation(fields: [routeId],references: [id])
+  driver driver @relation(fields: [driverId],references: [id]) 
+}
+
+model routes {
+  id String @id @default(uuid())
+  routeName String
+  startlat String
+  startlong String
+  endlat String
+  endlong String
+  stops stops[]
+  bus bus[]
+}
+
+model stops {
+  id String @id @default(uuid())
+  lat String
+  long String
+  routes routes[]
+}
