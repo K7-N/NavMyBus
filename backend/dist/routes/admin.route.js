@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AdminRouter = void 0;
+const express_1 = require("express");
+const admin_middleware_1 = require("../middleware/admin.middleware");
+const admin_controller_1 = require("../controllers/admin.controller");
+exports.AdminRouter = (0, express_1.Router)();
+exports.AdminRouter.post("/login", admin_controller_1.login);
+exports.AdminRouter.post("/addDriver", admin_middleware_1.adminMiddleware, admin_controller_1.addDriver);
+exports.AdminRouter.post("/removeDriver", admin_middleware_1.adminMiddleware, admin_controller_1.removeDriver);
+exports.AdminRouter.post("/AssignDriver", admin_middleware_1.adminMiddleware, admin_controller_1.AssignDriver);

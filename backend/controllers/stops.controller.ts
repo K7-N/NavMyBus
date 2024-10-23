@@ -1,12 +1,33 @@
 import { Request, Response } from "express";
 export async function addStop(req: Request, res: Response) {
-    res.send("addStop")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 
 export async function editStop(req: Request, res: Response) {
-    res.send("updateStop")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 
 export async function deleteStop(req: Request, res: Response) {
-    res.send("deleteStop")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }

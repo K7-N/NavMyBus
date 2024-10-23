@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DriverRouter = void 0;
+const express_1 = require("express");
+const driver_controller_1 = require("../controllers/driver.controller");
+const driver_middleware_1 = require("../middleware/driver.middleware");
+exports.DriverRouter = (0, express_1.Router)();
+exports.DriverRouter.post("/login", driver_controller_1.login);
+exports.DriverRouter.post("/toggleLive", driver_middleware_1.driverMiddleware, driver_controller_1.toggleLive);
+exports.DriverRouter.post("/updateLocation", driver_middleware_1.driverMiddleware, driver_controller_1.updateLocation);
+exports.DriverRouter.get("/getDriver", driver_middleware_1.driverMiddleware, driver_controller_1.getDriver);

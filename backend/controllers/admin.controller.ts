@@ -1,13 +1,41 @@
 import { Request, Response } from "express";
 export async function login(req: Request, res: Response) {
-    res.send("login")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function addDriver(req: Request, res: Response) {
-    res.send("addDriver")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function removeDriver(req: Request, res: Response) {
-    res.send("removeDriver")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function AssignDriver(req: Request, res: Response) {
-    res.send("AssignDriver")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }

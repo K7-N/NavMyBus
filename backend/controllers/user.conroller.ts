@@ -1,13 +1,41 @@
 import { Request, Response } from "express";
 export async function login(req: Request, res: Response) {
-    res.send("login")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function signup(req: Request, res: Response) {
-    res.send("signup")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function updateProfile(req: Request, res: Response) {
-    res.send("updateProfile")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function getProfile(req: Request, res: Response) {
-    res.send("getProfile")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }

@@ -1,13 +1,41 @@
 import { Request, Response } from "express";
 export async function login(req: Request, res: Response) {
-    res.send("login")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function toggleLive(req: Request, res: Response) {
-    res.send("toggleLive")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function updateLocation(req: Request, res: Response) {
-    res.send("updateLocation")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
 export async function getDriver(req: Request, res: Response) {
-    res.send("getDriver")
+    try {
+
+    } catch (error: any) {
+        res.json({
+            success: false,
+            message: error.message || "Internal Server Error"
+        })
+    }
 }
