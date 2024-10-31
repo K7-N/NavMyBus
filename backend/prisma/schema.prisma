@@ -29,7 +29,7 @@ model driver {
 
 model admin {
   id String @id @default(uuid())
-  email String
+  email String @unique
   password String
 }
 
@@ -38,6 +38,8 @@ model bus {
   busno String
   driverId String @unique
   routeId String
+  long Int?
+  lat Int?
   live Boolean @default(false)
   routes routes @relation(fields: [routeId],references: [id])
   driver driver @relation(fields: [driverId],references: [id]) 
@@ -46,17 +48,17 @@ model bus {
 model routes {
   id String @id @default(uuid())
   routeName String
-  startlat String
-  startlong String
-  endlat String
-  endlong String
+  startlat Int
+  startlong Int
+  endlat Int
+  endlong Int
   stops stops[]
   bus bus[]
 }
 
 model stops {
   id String @id @default(uuid())
-  lat String
-  long String
+  lat Int
+  long Int
   routes routes[]
 }
