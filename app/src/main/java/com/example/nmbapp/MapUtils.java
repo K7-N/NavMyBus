@@ -38,7 +38,6 @@ public class MapUtils {
                     .append("&instructions=false")
                     .append("&key=")
                     .append(apikey);
-
             return urlBuilder.toString();
         }
 
