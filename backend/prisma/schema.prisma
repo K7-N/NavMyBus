@@ -24,7 +24,7 @@ model driver {
   name  String
   email String @unique
   password String 
-  bus bus?
+  bus bus[]
 }
 
 model admin {
@@ -48,17 +48,15 @@ model bus {
 model routes {
   id String @id @default(uuid())
   routeName String
-  startlat Int
-  startlong Int
-  endlat Int
-  endlong Int
   stops stops[]
   bus bus[]
 }
 
 model stops {
   id String @id @default(uuid())
+  description String @default("")
   lat Int
   long Int
+  time String @default("")
   routes routes[]
 }

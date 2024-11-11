@@ -11,7 +11,9 @@ export async function addStop(req: Request, res: Response) {
         const stop = await prisma.stops.create({
             data: {
                 lat: check.data.lat,
-                long: check.data.long
+                long: check.data.long,
+                description: check.data.description,
+                time: check.data.time
             }
         })
         await prisma.routes.update({
@@ -62,7 +64,9 @@ export async function editStop(req: Request, res: Response) {
             },
             data: {
                 lat: check.data.lat,
-                long: check.data.long
+                long: check.data.long,
+                description: check.data.description,
+                time: check.data.time
             }
         })
         res.json({

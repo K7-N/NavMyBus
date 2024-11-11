@@ -10,11 +10,7 @@ export async function addRoute(req: Request, res: Response) {
         }
         await prisma.routes.create({
             data: {
-                routeName: check.data.routeName,
-                startlat: check.data.startlat,
-                startlong: check.data.startlong,
-                endlat: check.data.endlat,
-                endlong: check.data.endlong,
+                routeName: check.data.routeName
             }
         })
         res.json({
@@ -79,11 +75,7 @@ export async function updateRoute(req: Request, res: Response) {
                 id: check.data.routeId
             },
             data: {
-                routeName: check.data.routeName,
-                startlat: check.data.startlat,
-                startlong: check.data.startlong,
-                endlat: check.data.endlat,
-                endlong: check.data.endlong,
+                routeName: check.data.routeName
             }
         })
         res.json({

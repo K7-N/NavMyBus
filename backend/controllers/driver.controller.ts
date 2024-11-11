@@ -62,7 +62,7 @@ export async function toggleLive(req: Request, res: Response) {
         }
         await prisma.bus.update({
             where: {
-                id: driver.bus.id
+                id: driver.bus[0].id
             },
             data: {
                 live: check.data.live
@@ -103,7 +103,7 @@ export async function updateLocation(req: Request, res: Response) {
         }
         const bus = await prisma.bus.findUnique({
             where: {
-                id: driver.bus.id
+                id: driver.bus[0].id
             },
 
         })
@@ -112,7 +112,7 @@ export async function updateLocation(req: Request, res: Response) {
         }
         await prisma.bus.update({
             where: {
-                id: driver.bus.id
+                id: driver.bus[0].id
             },
             data: {
                 lat: check.data.lat,
