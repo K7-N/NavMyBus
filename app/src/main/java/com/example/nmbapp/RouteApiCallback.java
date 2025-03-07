@@ -62,6 +62,7 @@ public class RouteApiCallback extends UrlRequest.Callback {
             pl.getOutlinePaint().setStrokeJoin(Paint.Join.ROUND);
             pl.getOutlinePaint().setStrokeCap(Paint.Cap.ROUND);
             mapView.getOverlays().add(0, pl);
+            mapView.invalidate();
             try {
                 byteArrayOutputStream.close();
             } catch (IOException e) {

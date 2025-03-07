@@ -23,6 +23,7 @@ import java.util.Map;
 
 public class Home_page extends AppCompatActivity {
     Button viewBuses, trackBuses, settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

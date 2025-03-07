@@ -42,10 +42,15 @@ dependencies {
     implementation(libs.activity)
     implementation("org.osmdroid:osmdroid-android:6.1.20")
     implementation("org.osmdroid:osmdroid-mapsforge:6.1.20")
+    implementation("com.squareup.retrofit2:retrofit:2.7.2")
+    implementation("com.squareup.retrofit2:converter-gson:2.7.2")
     implementation(libs.constraintlayout)
     implementation(libs.play.services.maps)
     implementation("com.google.android.gms:play-services-cronet:18.0.1")
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.java.websocket)
+
 }
